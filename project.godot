@@ -1,0 +1,31 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Godot_Comfy_AI"
+config/description="ComfyUI API implementation in Godot that allows Godot to be used as a front-end for ComfyUI, enabling image and text generation and display over a websocket connection to a locally hosted ComfyUI instance. 
+
+By: DADA_universe (with a healthy dose of AI)
+See repo for possible updates: "
+run/main_scene="res://ComfyImageGenerator.tscn"
+config/features=PackedStringArray("4.2", "Mobile")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="res://godot-comfy-ai-logo.png"
+config/icon="res://Godot_Comfy_AI_logo.svg"
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="ignore"
+
+[rendering]
+
+renderer/rendering_method="mobile"
