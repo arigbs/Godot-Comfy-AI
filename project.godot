@@ -13,8 +13,8 @@ config_version=5
 config/name="Godot_Comfy_AI"
 config/description="ComfyUI API implementation in Godot that allows Godot to be used as a front-end for ComfyUI, enabling image and text generation and display over a websocket connection to a locally hosted ComfyUI instance. 
 
-By: DADA_universe (with a healthy dose of AI)
-See repo for possible updates: "
+A DADA_universe adventure (with a healthy dose of AI ;o))
+Visit repo for possible updates: https://github.com/arigbs/Godot-Comfy-AI.git"
 run/main_scene="res://ComfyImageGenerator.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 boot_splash/bg_color=Color(0, 0, 0, 1)

@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://63su7sc8vev6"]
+[gd_scene load_steps=4 format=3 uid="uid://63su7sc8vev6"]
 
 [ext_resource type="Script" path="res://Comfy_Godot_WebSocket.gd" id="1_o8ryd"]
 [ext_resource type="Texture2D" uid="uid://mqrm3t7qkvku" path="res://Godot_Comfy_AI_logo.svg" id="2_ydw5w"]
 [ext_resource type="Theme" uid="uid://bnx831oxnajt7" path="res://Comfy_theme.tres" id="3_wksjx"]
-[ext_resource type="Texture2D" uid="uid://cvkywsqtgiah0" path="res://2022_DADA_logo5a.png" id="4_vc28q"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -125,11 +124,6 @@ prefix = "Seed:"
 layout_mode = 2
 theme = ExtResource("3_wksjx")
 text = "Check Websocket State"
-
-[node name="2022DadaLogo5a" type="Sprite2D" parent="VBoxContainer/MarginContainer/HBoxContainer/Buttons_VBoxContainer_2"]
-position = Vector2(328, 32)
-scale = Vector2(0.370504, 0.370504)
-texture = ExtResource("4_vc28q")
 
 [connection signal="button_down" from="VBoxContainer/MarginContainer/HBoxContainer/Buttons_VBoxContainer_1/Connect_to_Comfy_Server" to="." method="_on_connect_comfy_server_button_down"]
 [connection signal="button_down" from="VBoxContainer/MarginContainer/HBoxContainer/Buttons_VBoxContainer_1/Make_Image" to="." method="_on_make_image_button_down"]
