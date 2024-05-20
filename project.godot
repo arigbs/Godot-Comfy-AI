@@ -19,7 +19,7 @@ run/main_scene="res://ComfyImageGenerator.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://godot-comfy-ai-logo.png"
-config/icon="res://Godot_Comfy_AI_logo.svg"
+config/icon="res://godot-comfy-ai-text-logo.png"
 
 [display]
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://63su7sc8vev6"]
+[gd_scene load_steps=5 format=3 uid="uid://63su7sc8vev6"]
 
 [ext_resource type="Script" path="res://Comfy_Godot_WebSocket.gd" id="1_o8ryd"]
 [ext_resource type="Texture2D" uid="uid://mqrm3t7qkvku" path="res://Godot_Comfy_AI_logo.svg" id="2_ydw5w"]
 [ext_resource type="Theme" uid="uid://bnx831oxnajt7" path="res://Comfy_theme.tres" id="3_wksjx"]
+[ext_resource type="Texture2D" uid="uid://5sa42c3sxcnk" path="res://godot-comfy-ai-text-logo.png" id="4_wu7no"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -23,6 +24,13 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="ConnectionTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="DataParsingTimer" type="Timer" parent="."]
+unique_name_in_owner = true
 
 [node name="ImageDisplay_TextureRect" type="TextureRect" parent="."]
 unique_name_in_owner = true
@@ -60,17 +68,17 @@ horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_bottom = 15
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer"]
 layout_mode = 2
 theme = ExtResource("3_wksjx")
 alignment = 1
 
-[node name="Godot-comfy-ai-logo" type="Sprite2D" parent="VBoxContainer/MarginContainer/HBoxContainer"]
-position = Vector2(-118, 29.0001)
-scale = Vector2(0.0583333, 0.0583333)
-texture = ExtResource("2_ydw5w")
+[node name="Godot-comfy-ai-text-logo" type="Sprite2D" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+position = Vector2(-178, 42)
+scale = Vector2(0.0696722, 0.0696722)
+texture = ExtResource("4_wu7no")
 
 [node name="Buttons_VBoxContainer_1" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -96,6 +104,7 @@ theme = ExtResource("3_wksjx")
 placeholder_text = "Enter Positive Prompt Here"
 alignment = 1
 expand_to_text_length = true
+caret_blink = true
 
 [node name="NegativePrompt_Input" type="LineEdit" parent="VBoxContainer/MarginContainer/HBoxContainer/Input_VBoxContainer"]
 unique_name_in_owner = true
@@ -104,6 +113,19 @@ theme = ExtResource("3_wksjx")
 placeholder_text = "Enter Negative Prompt Here"
 alignment = 1
 expand_to_text_length = true
+caret_blink = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_wksjx")
+text = "Random Seed"
+
+[node name="RandomSeedToggleButton" type="CheckButton" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
 
 [node name="Buttons_VBoxContainer_2" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -125,6 +147,7 @@ layout_mode = 2
 theme = ExtResource("3_wksjx")
 text = "Check Websocket State"
 
+[connection signal="timeout" from="ConnectionTimer" to="." method="_on_connection_timeout"]
 [connection signal="button_down" from="VBoxContainer/MarginContainer/HBoxContainer/Buttons_VBoxContainer_1/Connect_to_Comfy_Server" to="." method="_on_connect_comfy_server_button_down"]
 [connection signal="button_down" from="VBoxContainer/MarginContainer/HBoxContainer/Buttons_VBoxContainer_1/Make_Image" to="." method="_on_make_image_button_down"]
 [connection signal="button_down" from="VBoxContainer/MarginContainer/HBoxContainer/Buttons_VBoxContainer_2/WebSocket_State_Check" to="." method="_on_socket_state_check_button_down"]
