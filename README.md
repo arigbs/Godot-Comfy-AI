@@ -2,7 +2,7 @@
 
 ComfyUI API implementation in Godot that allows Godot to be used as a front-end for ComfyUI, enabling image and text generation and display over a websocket connection to a locally hosted ComfyUI instance.  
 
-![Godot-Comfy-AI-Logo](godot-comfy-ai-logo.png)
+![Godot-Comfy-AI-Logo](Screenshots/godot-comfy-ai-logo_frame.png)
 
 Godot-Comfy-AI demonstrates a simple integration for connecting Godot, the open-source game engine, with ComfyUI, a powerful AI image generation tool, using a WebSocket API. By leveraging ComfyUI's workflow JSON files and API endpoints, you can create dynamic and interactive applications that generate images based on user input or game events.
 
